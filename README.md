@@ -18,6 +18,12 @@ See [original repo](https://github.com/cordova-misc/cordova-webintent)
     }, function(success) {
     }, function(error) {
     });
+    
+Add to AndroidManifest.xml inside <application>:
+
+    <provider android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+        <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
+    </provider>
 
 ## Licence ##
 
